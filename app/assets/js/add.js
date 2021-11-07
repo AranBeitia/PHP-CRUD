@@ -9,7 +9,7 @@ $(document).ready(function () {
 			fd.append('file', files[0])
 
 			$.ajax({
-				url: './app/db/update.php',
+				url: './app/db/add.php',
 				type: 'post',
 				data: fd,
 				contentType: false,

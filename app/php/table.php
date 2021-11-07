@@ -11,7 +11,6 @@
 			$fileCreate =  date("Y-m-d H:m:s", filectime($item));
 			$fileModify =  date("Y-m-d H:m:s", filemtime($item));
 			$id++;
-
 ?>
 	<tr>
 		<th scope="row"><?php echo $id ?></th>
@@ -24,6 +23,7 @@
 		<td>
 			<div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
 				<button id="btnEdit" type="button" class="btn btn-success">Edit</button>
+				<button id="btnOpen" type="button" class="btn btn-info" data-file="<?php echo $item; ?>">Open</button>
 				<button id="btnDelete" type="button" class="btn btn-danger" data-file="<?php echo $item; ?>">Delete</button>
 			</div>
 		</td>

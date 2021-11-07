@@ -1,8 +1,4 @@
 let CRUDModal = new bootstrap.Modal(document.getElementById('CRUDModal'))
-// DATATABLE
-$(document).ready(function () {
-	let tableFiles = $('#tableFiles').DataTable({})
-})
 
 // BUTTON ADD
 $('#btnAdd').click(function () {

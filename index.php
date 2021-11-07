@@ -8,7 +8,7 @@
 			</div>
 		</nav>
 	</header>
-	<main class="container">
+	<main class="container-fluid">
 		<div class="row my-1">
 			<div class="col-lg-12">
 				<button id="btnAdd" type="button" class="btn btn-success">Add</button>
@@ -35,5 +35,6 @@
 		</div>
 	</main>
 	<?php include './app/php/modal.php'; ?>
+	<script src="./app/assets/js/loadTable.js"></script>
 </body>
 </html>
