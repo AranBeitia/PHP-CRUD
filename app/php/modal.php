@@ -27,4 +27,4 @@
 	</div>
 </article>
 
-<!-- <script src="../../app/assets/js/add.js"></script> -->
+<script src="./app/assets/js/add.js"></script>

@@ -1,4 +1,4 @@
-// FORM SUBMIT
+// FORM SUBMIT(add)
 $(document).ready(function () {
 	$('#formFiles').submit(function (e) {
 		e.preventDefault()

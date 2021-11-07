@@ -3,16 +3,16 @@
 	include 'functionGetSize.php';
 
 	$id = 0;
-	foreach(fileBrowser() as $item) { 
-		$fileName = basename($item);
-		$fileType = pathinfo($item, PATHINFO_EXTENSION);
-		$fileSize = getFileSize($item);
-		$fileCreate =  date("Y-m-d H:m:s", filectime($item));
-		$fileModify =  date("Y-m-d H:m:s", filemtime($item));
-		$id++;
+	foreach(fileBrowser() as $item) {
+		if(pathinfo($item, PATHINFO_EXTENSION) !== ""){
+			$fileName = basename($item);
+			$fileType = pathinfo($item, PATHINFO_EXTENSION);
+			$fileSize = getFileSize($item);
+			$fileCreate =  date("Y-m-d H:m:s", filectime($item));
+			$fileModify =  date("Y-m-d H:m:s", filemtime($item));
+			$id++;
 
 ?>
-
 	<tr>
 		<th scope="row"><?php echo $id ?></th>
 		<td>folder</td>
@@ -23,9 +23,12 @@
 		<td><?php echo $fileModify; ?></td>
 		<td>
 			<div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
-				<button type="button" class="btn btn-success">Edit</button>
-				<button type="button" class="btn btn-danger">Delete</button>
+				<button id="btnEdit" type="button" class="btn btn-success">Edit</button>
+				<button id="btnDelete" type="button" class="btn btn-danger" data-file="<?php echo $item; ?>">Delete</button>
 			</div>
 		</td>
 	</tr>
-	<?php } ?>
+	<?php }} ?>
+
+	<script src="./app/assets/js/delete.js"></script>
+

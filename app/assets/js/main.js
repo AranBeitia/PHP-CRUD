@@ -1,20 +1,7 @@
 let CRUDModal = new bootstrap.Modal(document.getElementById('CRUDModal'))
 // DATATABLE
 $(document).ready(function () {
-	let tableFiles = $('#tableFiles').DataTable({
-		columnDefs: [
-			{
-				targets: -1,
-				data: null,
-				defaultContent: `
-				<div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
-					<button type="button" class="btn btn-success">Edit</button>
-					<button type="button" class="btn btn-danger">Delete</button>
-				</div>
-			`,
-			},
-		],
-	})
+	let tableFiles = $('#tableFiles').DataTable({})
 })
 
 // BUTTON ADD
@@ -24,53 +11,16 @@ $('#btnAdd').click(function () {
 	$('#modalTitle').text('Add new file')
 	$('#modalTitle').css('color', 'white')
 	$('#changeName').hide()
+	$('#uploadFile').show()
 	CRUDModal.show()
 })
 
-// FORM SUBMIT
-$(document).ready(function () {
-	$('#formFiles').submit(function (e) {
-		e.preventDefault()
-		var fd = new FormData()
-		var files = $('#inputFile')[0].files
-
-		if (files.length > 0) {
-			fd.append('file', files[0])
-
-			$.ajax({
-				url: './app/db/update.php',
-				type: 'post',
-				data: fd,
-				contentType: false,
-				processData: false,
-				success: function (response) {
-					if (response) {
-						console.log('response')
-						// Swal.fire({
-						// 	icon: 'success',
-						// 	title: 'File updated',
-						// 	showConfirmButton: false,
-						// 	timer: 1500,
-						// })
-						// //?recharge table
-						// loadTable()
-					} else {
-						console.log('nooooou')
-						// Swal.fire({
-						// 	icon: 'error',
-						// 	title: 'Oops...',
-						// 	text: 'Something went wrong!',
-						// })
-					}
-				},
-			})
-		} else {
-			console.log('error')
-			// Swal.fire({
-			//   icon: "error",
-			//   title: "Oops...",
-			//   text: "Something went wrong!",
-			// });
-		}
-	})
+// BUTTON EDIT
+$(document).on('click', '#btnEdit', function () {
+	$('.modal-header').css('background-color', '#007bff')
+	$('#modalTitle').text('Change name')
+	$('#modalTitle').css('color', 'white')
+	$('#uploadFile').hide()
+	$('#changeName').show()
+	CRUDModal.show()
 })
