@@ -22,7 +22,7 @@
 		<td><?php echo $fileModify; ?></td>
 		<td>
 			<div class="btn-group btn-group-sm" role="group" aria-label="Basic mixed styles example">
-				<button id="btnEdit" type="button" class="btn btn-success">Edit</button>
+				<button id="btnEdit" type="button" class="btn btn-success" data-file="<?php echo $fileName; ?>">Edit</button>
 				<button id="btnOpen" type="button" class="btn btn-info" data-file="<?php echo $item; ?>">Open</button>
 				<button id="btnDelete" type="button" class="btn btn-danger" data-file="<?php echo $item; ?>">Delete</button>
 			</div>
@@ -31,4 +31,5 @@
 	<?php }} ?>
 
 	<script src="./app/assets/js/delete.js"></script>
+	<script src="./app/assets/js/edit.js"></script>
 

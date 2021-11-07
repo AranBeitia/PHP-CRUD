@@ -8,6 +8,7 @@ $('#btnAdd').click(function () {
 	$('#modalTitle').css('color', 'white')
 	$('#changeName').hide()
 	$('#uploadFile').show()
+	option = 1
 	CRUDModal.show()
 })
 
@@ -18,5 +19,6 @@ $(document).on('click', '#btnEdit', function () {
 	$('#modalTitle').css('color', 'white')
 	$('#uploadFile').hide()
 	$('#changeName').show()
+	option = 2
 	CRUDModal.show()
 })
