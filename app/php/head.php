@@ -1,12 +1,12 @@
 <?php
-	include_once './app/db/connection.php';
-	$object = new Connection();
-	$connection = $object->Connect();
+	// include_once './app/db/connection.php';
+	// $object = new Connection();
+	// $connection = $object->Connect();
 
-	$query = "SELECT id, file, type, download, date_created FROM files";
-	$result = $connection->prepare($query);
-	$result->execute();
-	$data=$result->fetchAll(PDO::FETCH_ASSOC);
+	// $query = "SELECT id, file, type, download, date_created FROM files";
+	// $result = $connection->prepare($query);
+	// $result->execute();
+	// $data=$result->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -4,7 +4,6 @@ $(document).ready(function () {
 		e.preventDefault()
 		var fd = new FormData()
 		var files = $('#inputFile')[0].files
-		console.log(fd)
 		if (files.length > 0) {
 			fd.append('file', files[0])
 

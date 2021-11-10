@@ -1,7 +1,6 @@
 $(document).on('click', '#btnDelete', function (e) {
 	let row = $(this)
 	let fileUrl = e.target.dataset.file
-
 	$.ajax({
 		url: './app/db/delete.php',
 		type: 'post',
@@ -9,7 +8,7 @@ $(document).on('click', '#btnDelete', function (e) {
 		success: function (response) {
 			if (response) {
 				row.parents('tr').remove()
-				// loadTable()
+				//loadTable()
 			} else {
 				console.log('now')
 			}
